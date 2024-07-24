@@ -44,14 +44,17 @@ class AlienInvasion:
         """키를 누를 때 응답합니다."""
         if event.key == pygame.K_RIGHT:
              self.ship.moving_right = True
-        if event.key == pygame.K_LEFT:
+        elif event.key == pygame.K_LEFT:
              self.ship.moving_left = True
+        elif event.key == pygame.K_q:
+             sys.exit()
+
 
     def _check_keyup(self, event):
         """키에서 손을 뗄 때 응답합니다."""
         if event.key == pygame.K_RIGHT:
              self.ship.moving_right = False
-        if event.key == pygame.K_LEFT:
+        elif event.key == pygame.K_LEFT:
              self.ship.moving_left = False
 
     def _update_screen(self):
